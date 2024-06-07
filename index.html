@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="./img/Favicon.png" rel="icon">
+    <link type="text/css" href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="./vendor/fontawesome/css/all.min.css" rel="stylesheet">
+    <link type="text/css" href="./css/main.css" rel="stylesheet">
+    <title>OnCalculator</title>
+</head>
+
+<body>
+    <div class="w-100 d-grid">
+        <header class="w-100 d-flex justify-content-center align-content-center align-items-center align-self-center">
+            <nav id="nav"
+                class="w-100 navbar-expand-md nav d-flex justify-content-start align-content-center align-items-center align-self-center">
+                <div
+                    class="container-fluid py-4 d-flex justify-content-between align-content-center align-items-center align-self-center nav_div">
+                    <div class="h_div_1 pt-1 ps-2">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span id="slider" class="slider round"></span>
+                        </label>
+                    </div>
+                    <h1 class="text-white h1">
+                        <a class="text-white" id="a_h1" href="./index.html" target="_self">
+                            <span id="logo" class="h_span">On</span>Calculator</a>
+                    </h1>
+                    <div class="h_div_2 pe-2">
+                        <input type="checkbox" id="checkbox" data-bs-toggle="collapse" data-bs-target="#coll">
+                        <label for="checkbox" class="toggle">
+                            <div class="bars" id="bar1"></div>
+                            <div class="bars" id="bar2"></div>
+                            <div class="bars" id="bar3"></div>
+                        </label>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div id="calculate_body" class="mx-auto my-4 calbody">
+            <div class="cal_div py-2">
+                <form class="w-100 modeform">
+                    <input class="form-check-input ms-5" id="inp_1" name="inp" type="radio" value="Deg"
+                        onclick="click_inp_1('inp_2', 'inp_3')" checked>
+                    <label class="text-white form-check-label ps-2 pe-5 l" for="inp_1">Deg</label>
+                    <input class="form-check-input ms-5" id="inp_2" name="inp" type="radio" value="Rad"
+                        onclick="click_inp_2('inp_1', 'inp_3')">
+                    <label class="text-white form-check-label ps-2 pe-5 l" for="inp_2">Rad</label>
+                    <input class="form-check-input ms-5" id="inp_3" name="inp" type="radio" value="Gra"
+                        onclick="click_inp_3('inp_1', 'inp_2')">
+                    <label class="text-white form-check-label ps-2 pe-5 l" for="inp_3">Gra</label>
+                </form>
+                <form class="w-100 modeform">
+                    <input class="form-check-input ms-1" id="inp_4" name="inp" type="checkbox"
+                        onclick="click_inp_4('inp_5', 'inp_6', 'inp_7')">
+                    <label class="text-white form-check-label ps-2 pe-5 l" for="inp_4">DEC</label>
+                    <input class="form-check-input ms-3" id="inp_5" name="inp" type="checkbox"
+                        onclick="click_inp_5('inp_4', 'inp_6', 'inp_7')">
+                    <label class="text-white form-check-label ps-2 pe-5 l" for="inp_5">BIN</label>
+                    <input class="form-check-input ms-3" id="inp_6" name="inp" type="checkbox"
+                        onclick="click_inp_6('inp_4', 'inp_5', 'inp_7')">
+                    <label class="text-white form-check-label ps-2 pe-5 l" for="inp_6">OCT</label>
+                    <input class="form-check-input ms-3" id="inp_7" name="inp" type="checkbox"
+                        onclick="click_inp_7('inp_4', 'inp_5', 'inp_6')">
+                    <label class="text-white form-check-label ps-2 l" for="inp_7">HEX</label>
+                </form>
+            </div>
+            <div class="Field_div">
+                <form class="w-100 Fieldform">
+                    <div class="text-white w-100 my-1 form-control" id="Field_1"></div>
+                    <input class="w-100 p-1 mb-3 form-control" name="Field_2" id="Field_2" type="text" value="0"
+                        readonly>
+                </form>
+            </div>
+            <button class="btn btn-warning butt_sin" onclick="butt_sin('Field_2')">sin</button>
+            <button class="btn btn-warning butt_cos" onclick="butt_cos('Field_2')">cos</button>
+            <button class="btn btn-warning butt_tan" onclick="butt_tan('Field_2')">tan</button>
+            <button class="btn btn-warning butt_sin_1" onclick="butt_sin_1('Field_2')">sin&#x207B;&#x00B9;</button>
+            <button class="btn btn-warning butt_cos_1" onclick="butt_cos_1('Field_2')">cos&#x207B;&#x00B9;</button>
+            <button class="btn btn-warning butt_tan_1" onclick="butt_tan_1('Field_2')">tan&#x207B;&#x00B9;</button>
+            <button class="btn btn-warning butt_sinh" onclick="butt_sinh('Field_2')">sinh</button>
+            <button class="btn btn-warning butt_cosh" onclick="butt_cosh('Field_2')">cosh</button>
+            <button class="btn btn-warning butt_tanh" onclick="butt_tanh('Field_2')">tanh</button>
+            <button class="btn btn-warning butt_sinh_1" onclick="butt_sinh_1('Field_2')">sinh&#x207B;&#x00B9;</button>
+            <button class="btn btn-warning butt_cosh_1" onclick="butt_cosh_1('Field_2')">cosh&#x207B;&#x00B9;</button>
+            <button class="btn btn-warning butt_tanh_1" onclick="butt_tanh_1('Field_2')">tanh&#x207B;&#x00B9;</button>
+            <button class="btn btn-primary butt_sup2" onclick="butt_sup2('Field_2')">x&#xB2;</button>
+            <button class="btn btn-primary butt_sup3" onclick="butt_sup3('Field_2')">x&#xB3;</button>
+            <button class="btn btn-primary butt_sup4" onclick="butt_sup4('Field_2')">x&#x2074;</button>
+            <button class="btn btn-primary butt_supy" onclick="butt_supy('Field_2')">x&#x02B8;</button>
+            <button class="btn btn-primary butt_2x" onclick="butt_2x('Field_2')">2&#x02E3;</button>
+            <button class="btn btn-primary butt_10x" onclick="butt_10x('Field_2')">10&#x02E3;</button>
+            <button class="btn btn-primary butt_root2" onclick="butt_root2('Field_2')">&#x221A;x</button>
+            <button class="btn btn-primary butt_root3" onclick="butt_root3('Field_2')">&#x221B;x</button>
+            <button class="btn btn-primary butt_root4" onclick="butt_root4('Field_2')">&#x221C;x</button>
+            <button class="btn btn-primary butt_rooty" onclick="butt_rooty('Field_2')">&#x2B8;&#x221A;x</button>
+            <button class="btn btn-primary butt_esupx" onclick="butt_esupx('Field_2')">&#x1D486;&#x02E3;</button>
+            <button class="btn btn-primary butt_1_divi_x" onclick="butt_1_divi_x('Field_2')">&#x215F;&#x2093;</button>
+            <button class="btn btn-primary butt_Log10" onclick="butt_Log10('Field_2')">Log&#x2081;&#x2080;</button>
+            <button class="btn btn-primary butt_Log2" onclick="butt_Log2('Field_2')">Log&#x2082;</button>
+            <button class="btn btn-primary butt_Ln" onclick="butt_Ln('Field_2')">Ln</button>
+            <button class="btn btn-primary butt_Logxy" onclick="butt_Logxy('Field_2')">Log&#x1D67;&#x02E3;</button>
+            <button class="btn btn-primary butt_floor" onclick="butt_floor('Field_2')">&#x230A;x&#x230B;</button>
+            <button class="btn btn-primary butt_ceil" onclick="butt_ceil('Field_2')">&#x2308;x&#x2309;</button>
+            <button class="btn btn-primary butt_abs" onclick="butt_abs('Field_2')">&#x23AA;x&#x23AA;</button>
+            <button class="btn btn-primary butt_x_factor" onclick="butt_x_factor('Field_2')">x!</button>
+            <button id="btn_i" class="btn btn-primary butt_i" onclick="butt_i('Field_2')">&#x1D48A;</button>
+            <button class="btn btn-primary butt_Re_Im" onclick="butt_Re_Im('Field_2')">Re - Im</button>
+            <button id="btn_abs_arg" class="btn btn-primary butt_abs_arg" onclick="butt_abs_arg('Field_2')">r &#x2220;
+                &#x1D703;</button>
+            <button class="btn btn-primary butt_conj" onclick="butt_conj('Field_2')">conj</button>
+            <button id="btn_C" class="btn btn-danger butt_C" onclick="butt_C('Field_1')">C</button>
+            <button id="btn_CE" class="btn btn-danger butt_CE" onclick="butt_CE('Field_2')">CE</button>
+            <button id="btn_back" class="btn btn-info butt_backspace" onclick="backspace('Field_2')">&#x232B;</button>
+            <button id="btn_division" class="btn btn-success butt_division"
+                onclick="butt_division('Field_2')">&#x00F7;</button>
+            <button class="btn btn-primary butt_DEC" onclick="butt_DEC('Field_2')">DEC</button>
+            <button class="btn btn-primary butt_HEX" onclick="butt_HEX('Field_2')">HEX</button>
+            <button id="btn_7" class="btn btn-primary butt_7" onclick="butt_7('Field_2')">7</button>
+            <button id="btn_8" class="btn btn-primary butt_8" onclick="butt_8('Field_2')">8</button>
+            <button id="btn_9" class="btn btn-primary butt_9" onclick="butt_9('Field_2')">9</button>
+            <button id="btn_multi" class="btn btn-success butt_multiplication"
+                onclick="butt_multiplication('Field_2')">&#x00D7;</button>
+            <button class="btn btn-primary butt_BIN" onclick="butt_BIN('Field_2')">BIN</button>
+            <button class="btn btn-primary butt_OCT" onclick="butt_OCT('Field_2')">OCT</button>
+            <button id="btn_4" class="btn btn-primary butt_4" onclick="butt_4('Field_2')">4</button>
+            <button id="btn_5" class="btn btn-primary butt_5" onclick="butt_5('Field_2')">5</button>
+            <button id="btn_6" class="btn btn-primary butt_6" onclick="butt_6('Field_2')">6</button>
+            <button id="btn_minus" class="btn btn-success butt_minus" onclick="butt_minus('Field_2')">-</button>
+            <button class="btn btn-primary butt_PI" onclick="butt_PI('Field_1')">&#x03C0;</button>
+            <button class="btn btn-primary butt_E" onclick="butt_E('Field_1')">&#x1D486;</button>
+            <button id="btn_1" class="btn btn-primary butt_1" onclick="butt_1('Field_2')">1</button>
+            <button id="btn_2" class="btn btn-primary butt_2" onclick="butt_2('Field_2')">2</button>
+            <button id="btn_3" class="btn btn-primary butt_3" onclick="butt_3('Field_2')">3</button>
+            <button id="btn_plus" class="btn btn-success butt_plus" onclick="butt_plus('Field_2')">+</button>
+            <button id="btn_rp" class="btn btn-secondary butt_right_parenthesis"
+                onclick="butt_right_parenthesis('Field_2')">(</button>
+            <button id="btn_lp" class="btn btn-secondary butt_left_parenthesis"
+                onclick="butt_left_parenthesis('Field_2')">)</button>
+            <button class="btn btn-secondary butt_plus_minus" onclick="butt_plus_minus('Field_2')">+/-</button>
+            <button id="btn_0" class="btn btn-primary butt_0" onclick="butt_0('Field_2')">0</button>
+            <button id="btn_dot" class="btn btn-secondary butt_dot" onclick="butt_dot('Field_2')">.</button>
+            <button id="btn_equal" class="btn btn-info butt_equal" onclick="butt_equal('Field_2')">=</button>
+            <button class="btn btn-secondary butt_Ans" onclick="butt_Ans('Field_2')">Ans</button>
+            <button class="btn btn-secondary butt_percent" onclick="butt_percent('Field_2')">%</button>
+        </div>
+        <footer id="footer" class="py-4 px-3 w-100 foot">
+            <div class="foot_div_1 w-100">
+                <span class="text-white-50">
+                    The OnCalculator site calculator is provided to you in two types, simple and
+                    engineering, with light and dark themes.
+                </span><br>
+                <span class="text-white-50">Hope you enjoy using it.</span><br><br>
+            </div>
+            <div class="foot_div_2 w-100">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a class="text-white-50 f_a" href="#">About Us</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a class="text-white-50 f_a" href="#">Sitemap</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a class="text-white-50 f_a" href="#">Terms of Use</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a class="text-white-50 f_a" href="#">Privacy Policy</a>
+                    </li>
+                </ul>
+                <div class="end_div">
+                    <span class="text-white year">&copy; 2023 - 2030</span>
+                    <a class="text-white-50 f_a" href="./index.html" target="_self">OnCalculator.com</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./vendor/fontawesome/js/all.min.js"></script>
+    <script src="./Complex.js/complex.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
