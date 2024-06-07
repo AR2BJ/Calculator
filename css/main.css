@@ -1,0 +1,329 @@
+@import url(https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;800;900&display=swap);
+@import "./button.css";
+@import "./darkmode.css";
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-decoration: none;
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Barlow", sans-serif;
+}
+
+.h_div_1,
+.switch {
+	padding-bottom: 9px;
+}
+
+.h_div_2 {
+	padding-bottom: 0.3rem;
+}
+
+nav,
+.foot,
+.calbody,
+#Field_1 {
+	background-color: #0547a9;
+}
+
+.calbody,
+#Field_1 {
+	background-color: #545a5f;
+}
+
+.foot {
+	transform: translate(0px, 0px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	align-self: center;
+}
+
+.foot > .foot_div_1 {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	align-self: center;
+}
+
+.foot > .foot_div_2 {
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center;
+	align-self: center;
+}
+
+.foot > .foot_div_2 > .end_div .year {
+	padding-left: 1.5rem;
+}
+
+.foot > .foot_div_2 > .end_div .f_a {
+	padding-left: 0.25rem;
+}
+
+h1 a {
+	text-decoration: none;
+}
+
+.h_span {
+	transition-duration: 0.7s;
+	color: #ffbf00;
+}
+
+.calbody {
+	width: 550px;
+	border-radius: 15px;
+	padding-bottom: 46px;
+	display: grid;
+	justify-content: center;
+	align-content: space-between;
+	min-height: 100vh;
+	grid-template-columns: repeat(6, 70px);
+	grid-template-rows: minmax(120px, auto) repeat(11, 36px);
+	gap: 20px;
+}
+
+.cal_div,
+.Field_div {
+	grid-column: 1 / -1;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.Field_div {
+	margin-bottom: -15px;
+	position: relative;
+	bottom: 36px;
+}
+
+.modeform {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.butt_plus,
+.butt_minus,
+.butt_multiplication,
+.butt_division,
+.butt_equal {
+	font-size: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+
+.butt_esupx {
+	font-size: 23px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+
+.butt_E,
+.butt_PI,
+.butt_1_divi_x {
+	font-size: 22px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+
+.butt_sup2,
+.butt_sup3,
+.butt_sup4,
+.butt_supy,
+.butt_2x,
+.butt_10x,
+.butt_i,
+.butt_x_factor,
+.butt_root2,
+.butt_root3,
+.butt_root4,
+.butt_rooty,
+.butt_floor,
+.butt_ceil,
+.butt_0,
+.butt_1,
+.butt_2,
+.butt_3,
+.butt_4,
+.butt_5,
+.butt_6,
+.butt_7,
+.butt_8,
+.butt_9,
+.butt_dot,
+.butt_plus_minus {
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+
+.butt_abs,
+.butt_Ln,
+.butt_Log10,
+.butt_Log2,
+.butt_Logxy,
+.butt_conj,
+.butt_abs_arg,
+.butt_percent,
+.butt_C,
+.butt_right_parenthesis,
+.butt_CE,
+.butt_left_parenthesis,
+.butt_sin,
+.butt_cos,
+.butt_tan,
+.butt_sin_1,
+.butt_cos_1,
+.butt_tan_1,
+.butt_sinh,
+.butt_cosh,
+.butt_tanh,
+.butt_sinh_1,
+.butt_cosh_1,
+.butt_tanh_1,
+.butt_backspace {
+	font-size: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+
+.butt_Re_Im {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+	box-shadow: none;
+}
+
+input[type="checkbox"]:focus {
+	border: rgba(0, 0, 0, 0.25);
+}
+
+.modeform > .text-white:hover,
+.modeform > input[type="radio"]:hover,
+.modeform > input[type="radio"]:hover {
+	cursor: pointer;
+}
+
+input[type="text"],
+input[type="text"]:focus {
+	border: none;
+	box-shadow: none;
+	font-size: 30px;
+}
+
+#Field_1 {
+	height: 42px;
+	font-size: 25px;
+	border: none;
+	box-shadow: none;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+
+.calbody > .btn,
+.calbody > .btn:hover,
+.calbody > .btn:focus {
+	width: 70px;
+	position: relative;
+	border: none;
+	box-shadow: none;
+	font-weight: bold;
+	bottom: -30px;
+}
+
+.foot > .foot_div_2 > .breadcrumb > .breadcrumb-item .f_a:hover,
+.foot > .foot_div_2 > .end_div .f_a:hover {
+	color: #fff !important;
+	transition: color 0.5s 0.5ms;
+}
+
+@media only screen and (max-width: 700px) {
+	.main_div {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+	}
+
+	.foot > .foot_div_2 {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+		align-self: center;
+	}
+
+	.foot > .foot_div_2 > .end_div .year {
+		padding-left: 0;
+	}
+	.foot > .foot_div_2 > .end_div .f_a {
+		padding-left: 0;
+	}
+
+	.end_div {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+		align-self: center;
+	}
+}
+
+@media only screen and (max-width: 405px) {
+	.foot > .foot_div_2 > .breadcrumb {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+		align-self: center;
+	}
+}
+
+@media screen and (min-width: 1px) {
+	.calbody {
+		min-height: 50vh;
+	}
+}
